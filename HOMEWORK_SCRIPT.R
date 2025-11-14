@@ -60,5 +60,12 @@ monkey_df = data.frame(
 # a decrease in activities such as sociality or resting. This is due to an
 # increased amount of time spent on foraging.
 
-# Does the chacma baboon's time spend socializing face similar 
-# decrease as time spend resting, in response to an increased time foraging.
+# x: time spent foraging
+# y: time spent in resting
+# group: season (winter vs summer)
+
+# Does the chacma baboon's time spent resting face similar 
+# decrease in response to increased foraging
+# during the summmer and winter?
+
+
