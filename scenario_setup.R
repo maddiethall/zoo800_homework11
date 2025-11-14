@@ -34,24 +34,25 @@ ggplot(monkey_df, aes(x = meanDailyTemp_C, y = meanDailyDistance_km, color = Hab
   ) +
   theme_minimal()
 
-mod1 = lm(meanDailyDistance_km ~ meanDailyTemp_C * Habitat, data = monkey_df)
-summary(mod1)
+mod_1 = lm(meanDailyDistance_km ~ meanDailyTemp_C * Habitat, data = monkey_df)
+summary(mod_1)
 # interaction effect is NS
-  
-mod2 = lm(meanDailyDistance_km ~ meanDailyTemp_C + Habitat, data = monkey_df)
-summary(mod2)
+
+mod_2 = lm(meanDailyDistance_km ~ meanDailyTemp_C + Habitat, data = monkey_df)
+summary(mod_2)
 # removing the interaction effect from the model improves the fit
 # both variables are highly significant
 # temp and travel are negatively correlated across habitat types
 # monkeys in secondary forest travel farther on average
 # independent of temp
 
-mod3 = lm(meanDailyDistance_km ~ meanDailyTemp_C, data = monkey_df)
-summary(mod3)
+mod_3 = lm(meanDailyDistance_km ~ meanDailyTemp_C, data = monkey_df)
+summary(mod_3)
 
 #########################################################
 
 write.csv(monkey_df, "monkey_travel_data.csv", row.names = FALSE)
+monkey_df = read.csv("monkey_travel_data.csv")
 
 #### Scenario:
 # Primate habitats are often fragmented due to anthropogenic pressures
